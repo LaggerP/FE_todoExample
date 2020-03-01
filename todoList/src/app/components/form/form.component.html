@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Type your task:</h2>
+  <p class="input-container">
+    <input type="text"
+           id="input-username"
+           class="login-input"
+           placeholder="Your task"
+           name="taskToAdd"
+           [(ngModel)]="taskToAdd"
+           [ngModelOptions]="{standalone: true}"
+    >
+    <button mat-raised-button color="primary" (click)="addTask()">Add new task</button>
+  </p>
+</div>
+
+
+<div class="task_container" *ngIf="allTasks.length > 0">
+  <div *ngFor="let task of allTasks">
+    <h2>Task number {{task.count}}</h2>
+    <p class="">
+      {{task.info}}
+    </p>
+  </div>
+</div>
